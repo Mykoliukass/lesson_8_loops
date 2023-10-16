@@ -12,30 +12,34 @@
 # print(f"The average of these integers is: {average}")
 
 # Creating a dictionary
-import random 
+# import random 
 
-random_dict = {}
-for i in range(1,11):
-    random_dict[i] = random.randint(1,100)
-print(random_dict)
+# random_dict = {}
+# for i in range(1,11):
+#     random_dict[i] = random.randint(1,100)
+# print(random_dict)
 
 # Create a pin code cracker. Let's say pin code consists of 4 random digits. 
 # You can store the value in variable. Then create a loop going through all possible combinations until you find the one you entered.
+import time
 
-# pin = '4981'
-# locked = True
+pin = '0000'
+locked = True
 
-# while locked:
-#     for digit1 in range(10):
-#         for digit2 in range(10):
-#             for digit3 in range(10):
-#                 for digit4 in range(10):
-#                     current_attempt = f"{digit1}{digit2}{digit3}{digit4}"
-#                     # Check if the current combination matches the pin
-#                     if current_attempt == pin:
-#                         print(f"Pin Cracked! The correct pin is: {current_attempt}")
-#                         locked = False
+start_time = time.perf_counter()
+while locked:
+    for digit1 in range(10):
+        for digit2 in range(10):
+            for digit3 in range(10):
+                for digit4 in range(10):
+                    current_attempt = f"{digit1}{digit2}{digit3}{digit4}"
+                    if current_attempt == pin:
+                        print(f"Pin Cracked! The correct pin is: {current_attempt}")
+                        locked = False
 
+end_time = time.perf_counter()
+elapsed_time = end_time - start_time
+print(f'Elapsed time: {elapsed_time} seconds')
 
 # all_users = {"aaa": "111", "bbb": "222", "ccc": "333"}
 # value = True
