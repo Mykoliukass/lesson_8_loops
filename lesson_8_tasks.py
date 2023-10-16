@@ -12,12 +12,12 @@
 # print(f"The average of these integers is: {average}")
 
 # Creating a dictionary
-# import random 
+import random 
 
-# random_dict = {}
-# for i in range(1,11):
-#     random_dict[i] = random.randint(1,100)
-# print(random_dict)
+random_dict = {}
+for i in range(1,11):
+    random_dict[i] = random.randint(1,100)
+print(random_dict)
 
 # Create a pin code cracker. Let's say pin code consists of 4 random digits. 
 # You can store the value in variable. Then create a loop going through all possible combinations until you find the one you entered.
@@ -35,3 +35,18 @@
 #                     if current_attempt == pin:
 #                         print(f"Pin Cracked! The correct pin is: {current_attempt}")
 #                         locked = False
+
+
+# all_users = {"aaa": "111", "bbb": "222", "ccc": "333"}
+# value = True
+# while value == True:
+#     entered_username = input("Enter your username: ")
+#     entered_password = input("Enter your password: ")
+    
+#     for username, password in all_users.items():
+#         if entered_username == username and entered_password == password:
+#             print("Welcome")
+#             value = False 
+#             break
+#         else:
+#            print("Wrong")
