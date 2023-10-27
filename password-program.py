@@ -8,20 +8,15 @@
 # names 'improved password'
 # Count how many times the user inserted a wrong password
 # username='mykolas2',password='jerutis2';username='eteris',password='uzimtas;username='burbulas',password='burbuliene1!;username='pilvas',password='didelis!;username='vardas',password='slaptazodis'
+# "username='mykolas2',password='jerutis2';username='eteris',password='uzimtas';username='burbulas',password='burbuli;ene1!';username='pil'vas',password='didelis!';username='vardas',password='slaptazodis'"
 
-import random
-
-users_credentials = input("Please insert a database to be used for users credentials: ")
-credential_pairs = users_credentials.split(";")
-cleaned_pairs = [pair.replace("'", "").strip() for pair in credential_pairs]
+import random, re
+data_base = input("Please insert a database to be used for users credentials: ")
+pairs = re.findall(r"username='(.*?)',password='(.*?)'", data_base)
 credentials_dictionary = {}
-
-for single_pair in cleaned_pairs:
-    username, password = single_pair.split(',')
-    username_value = username.split('=')[1].strip()
-    password_value = password.split('=')[1].strip()
-    credentials_dictionary[username_value] = password_value
-
+for username, password in pairs:
+    credentials_dictionary[username] = password
+print(credentials_dictionary)
 while True:
     input_username = input("Please enter your username: ")
     number_of_attempts = 0
